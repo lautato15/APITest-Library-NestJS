@@ -1,4 +1,4 @@
-import { Book } from 'src/library/book.entity';
+import { Book } from 'src/library/entities/book.entity';
 
 export const books: Book[] = [
   new Book('El Mundo de Sofía', 1, 'Jostein Gaarder', true),

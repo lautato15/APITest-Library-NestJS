@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15
+    container_name: library-postgres
+    environment:
+      POSTGRES_USER: lautato15
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: library_sql
+    ports:
+      - '5499:5432'
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  db_data: {}
