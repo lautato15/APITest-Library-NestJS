@@ -6,9 +6,11 @@ import {
   Param,
   ParseIntPipe,
   Post,
+  UseGuards,
 } from '@nestjs/common';
 import { LibraryService } from './library.service';
 import { DonateBookDto } from './dto/donate-book.dto';
+import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 
 @Controller('books')
 export class LibraryController {
@@ -38,6 +40,7 @@ export class LibraryController {
     return this.libraryService.returnBook(id);
   }
 
+  @UseGuards(JwtAuthGuard)
   @Post('/donate')
   @HttpCode(201)
   donateBook(@Body() donateBookDto: DonateBookDto) {

@@ -14,3 +14,9 @@ model Book {
   updatedAt DateTime @updatedAt
   id        Int      @id @default(autoincrement())
 }
+
+model User {
+  id       Int    @id @default(autoincrement())
+  name     String @unique
+  password String
+}
