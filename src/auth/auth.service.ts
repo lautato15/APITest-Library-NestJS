@@ -11,6 +11,8 @@ export class AuthService {
   ) {}
 
   async login(name: string, password: string) {
+    console.log('ACA');
+    console.log(name, typeof name, password, typeof password);
     const user = await this.prisma.user.findUnique({
       where: {
         name,

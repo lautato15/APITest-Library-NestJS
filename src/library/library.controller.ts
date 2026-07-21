@@ -40,7 +40,7 @@ export class LibraryController {
     return this.libraryService.returnBook(id);
   }
 
-  @UseGuards(JwtAuthGuard)
+  // @UseGuards(JwtAuthGuard)
   @Post('/donate')
   @HttpCode(201)
   donateBook(@Body() donateBookDto: DonateBookDto) {
